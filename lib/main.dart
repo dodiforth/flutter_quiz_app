@@ -13,7 +13,18 @@ class QuizApp extends StatelessWidget {
     return MaterialApp(
         title: 'Quiz App',
         home: Scaffold(
-          body: StartScreen(),
+          body: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 136, 8, 191),
+                    Color.fromARGB(255, 136, 8, 101),
+                  ],
+                ),
+              ),
+              child: const StartScreen()),
         ));
   }
 }
