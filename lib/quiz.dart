@@ -14,7 +14,7 @@ class _QuizState extends State<Quiz> {
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = const QuestionsScreen(); // Render Content Conditionally
     });
   }
 
