@@ -26,7 +26,7 @@ class StartScreen extends StatelessWidget {
                 fontSize: 20,
               )),
           const SizedBox(height: 50),
-          ElevatedButton.icon(
+          ElevatedButton.icon( // Button with icon and label
               onPressed: startQuiz,
               icon: const Icon(Icons.play_arrow),
               label: const Text('Start Quiz!'),
