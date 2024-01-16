@@ -2,7 +2,7 @@ import 'package:flutter_quiz/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-      question: 'what are the main building blocks of Flutter UIs?',
+      question: 'What are the main building blocks of Flutter UIs?',
       answers: ['Widgets', 'Components', 'Blocks', 'Functions'],
       correctAnswer: 0),
   QuizQuestion(
