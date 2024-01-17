@@ -8,4 +8,10 @@ class QuizQuestion {
     required this.answers,
     required this.correctAnswer,
   });
+
+  List<String> getShuffledAnswers(){
+    final shuffledList = List.of(answers);
+    shuffledList.shuffle();
+    return shuffledList;
+  }
 }
