@@ -5,7 +5,9 @@ import 'answer_button.dart';
 import 'package:flutter_quiz/data/questions.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectAnswer});
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -14,11 +16,29 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuesion() {
-    setState(() {
-      currentQuestionIndex++;
-    });
+  void answerQuestion(String selectedAnswer) {
+    try {
+      widget.onSelectAnswer(selectedAnswer);
+
+      setState(() {
+        if (currentQuestionIndex < questions.length - 1) {
+          currentQuestionIndex++;
+        } else {
+          throw Exception('No more questions available');
+        }
+      });
+    } catch (e) {
+      print('An error occurred: $e');
+    }
   }
+
+  // void answerQuesion(String selectedAnswer) {
+  //   widget.onSelectAnswer(selectedAnswer);
+
+  //   setState(() {
+  //     currentQuestionIndex++;
+  //   });
+  // }
 
   @override
   Widget build(context) {
@@ -45,7 +65,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ...currentQuestion.getShuffledAnswers().map((answer) {
               return AnswerButton(
                 answerText: answer,
-                selectAnswer: answerQuesion,
+                selectAnswer: () {
+                  answerQuestion(answer);
+                },
               );
             }),
           ],
