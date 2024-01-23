@@ -8,22 +8,28 @@ class ResultScreen extends StatelessWidget {
   final List<String> chosenAnswers;
 
   List<Map<String, Object>> getSummaryData() {
-      final List<Map<String, Object>> summaryData = [];
+    final List<Map<String, Object>> summaryData = [];
 
-      for (var i = 0; i < chosenAnswers.length; i++) {
-        summaryData.add({
-          'question_index': i,
-          'question': questions[i].question,
-          'correctAnswer':questions[i].answers[0],
-          'userAnswer': chosenAnswers[i],
-        });
-      }
+    for (var i = 0; i < chosenAnswers.length; i++) {
+      summaryData.add({
+        'question_index': i,
+        'question': questions[i].question,
+        'correctAnswer': questions[i].answers[0],
+        'userAnswer': chosenAnswers[i],
+      });
+    }
 
-      return summaryData;
+    return summaryData;
   }
 
   @override
   Widget build(BuildContext context) {
+    final summaryData = getSummaryData();
+    final numTotalQuestions = questions.length;
+    final numCorrectQuesions = summaryData
+        .where((data) => data['correctAnswer'] == data['userAnswer'])
+        .length;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -31,15 +37,15 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('You answered x out of y questions correctly!',
+            Text('You answered $numCorrectQuesions out of $numTotalQuestions questions correctly!',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Color.fromRGBO(176, 98, 255, 1),
                     fontSize: 24,
                     fontWeight: FontWeight.bold)),
-            const SizedBox(height: 50),
-            QuestionSummary(summaryData: getSummaryData()),
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
+            QuestionSummary(summaryData: summaryData),
+            const SizedBox(height: 30),
             TextButton(
               onPressed: () {},
               child: const Text(
