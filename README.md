@@ -1,16 +1,32 @@
-# flutter_quiz
+![image info](screenshots/flutter_quiz_screenshot.jpeg)
+###
+- Android_Pixel_6_API34
 
-A new Flutter project.
+# ROLL DICE APP
+* Plaform: iOS / Android
+* Language: Dart SDK version 3.2.3 (stable)
+* Framework: Flutter 3.16.3 (stable)
 
-## Getting Started
+## Acknowledgement
+FLUTTER QUIZ APP is a code-along project under the tutorial by Maximilian Schwarzmuller from Academind.
+[Academind](https://academind.com/)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Introduction
+Building up on the core basics 
+A quiz app that allows you to start a quiz, navigate Flutter-related questions.
+And once you went throught all questions, you get a summary screen where it displays which ones were answered correctly and incorreectly. 
+Also you're able to restart the quiz if you want to. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Overview
+- Written in Dart 
+- Uses Flutter Framework
+- Google Fonts 6.1.0
+- Built in VSCode 1.83.1 (Universal)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Testing & Notes
+➕ Explore & Use More Widgets
+➕ Render Conditional & List Content
+➕ Build More Complex User Interfaces
+- Passing Values Across Multiple Widgets
+
