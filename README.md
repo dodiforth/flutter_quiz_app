@@ -1,8 +1,8 @@
-![image info](screenshots/flutter_quiz_screenshot.jpeg)
+![image info](screenshots/flutter_quiz_screenshot.jpg)
 ###
 - Android_Pixel_6_API34
 
-# ROLL DICE APP
+# Flutter Quiz App
 * Plaform: iOS / Android
 * Language: Dart SDK version 3.2.3 (stable)
 * Framework: Flutter 3.16.3 (stable)
