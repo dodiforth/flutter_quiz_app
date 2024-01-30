@@ -1,4 +1,4 @@
-![image info](screenshots/flutter_quiz_screenshot.png)
+![Screenshot](screenshots/‎flutter_quiz_screenshot.png)
 ###
 - Android_Pixel_6_API34
 
